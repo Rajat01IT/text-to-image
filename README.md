@@ -1,5 +1,4 @@
 # text-to-image
-  hello hello
-jon rajat
-  hello bharat
-  dhjkgukjfjgck
+  cd client
+  npm install
+  npm run dev
