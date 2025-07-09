@@ -20,16 +20,16 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            if(state === 'login'){
+            if(state === 'Login'){
                 const {data} = await axios.post(backendUrl +'/api/user/login', {email,password})
 
                 if(data.success){
                     setToken(data.token)
                     setUser(data.user)
-                    localStorage.getItem('token', data.token)
+                    localStorage.setItem('token', data.token)
                     setShowLogin(false)
                 }else{
-                    toast.erroe(data.message)
+                    toast.error(data.message)
                 }
             }else{
 
@@ -38,15 +38,15 @@ const Login = () => {
                 if(data.success){
                     setToken(data.token)
                     setUser(data.user)
-                    localStorage.getItem('token', data.token)
+                    localStorage.setItem('token', data.token)
                     setShowLogin(false)
                 }else{
-                    toast.erroe(data.message)
+                    toast.error(data.message)
                 }
 
             }
         } catch (error) {
-            toast.erroe(data.message)
+            toast.error(data.message)
         }
     }
 
